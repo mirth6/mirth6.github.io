@@ -238,6 +238,55 @@ export default Counter
 
 
 
+----
+
+#### 하위컴포넌트 -> 상위컴포넌트
+
+###### [Parent Component]
+
+```react
+
+	_parentFunction = (넘겨받은 데이터)=> {
+      this.setState({
+        ...this.state, ...{
+          data: 넘겨받은 데이터
+        }
+      });
+  }
+
+    MyCustomItem = props => <Child {...props} propsName={this._parentFunction }/>
+
+    render() {  
+        return (
+            <div>
+
+                <ListView
+                    data={this.state.receiverData} //데이터:[]
+                    item={this.MyCustomItem}       //렌더할 구조:Component
+                    style={{ width: "100%" }}
+                />
+
+            </div>
+        );
+    }
+```
+
+###### [Child Component]
+
+```react
+[Child Component]
+
+function _childFunction(){
+        props.propsName(넘겨줄 데이터);
+}
+
+render() { 
+    return (
+        <div onClick={this._childFunction}></div>
+    );
+}
+```
+
 
 
 
