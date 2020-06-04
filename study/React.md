@@ -200,13 +200,43 @@ export default Counter
 
 ##### constructor
 
+```react
+constructor(props){
+	super(props);
+}
+```
+
+
+
 ##### getDerivedStateFromProps
+
+- 컴포넌트 업데이트 될때
+
+```
+static getDerivedStateFromProps(nextProps, prevState){
+	if(nextProps.value != prevState.value){
+		return{
+			value: nextProps.value
+		}
+	}
+}
+```
+
+
 
 ##### render
 
 ##### componenetDidMount
 
-- 외부 라이브러리
+- 외부 라이브러리연동
+- 컴포넌트에서 필요한 데이터 요청: ajax
+- DOM에 관련된 작업
+
+```
+componenetDidMount(){
+
+}
+```
 
 
 
@@ -215,6 +245,16 @@ export default Counter
 - props나 state가 바뀜
 
 ##### shouldComponentUpdate
+
+```
+shouldComponentUpdate(nextProps, nextState){
+	if(){
+		return false; //렌더링 안됨
+	}
+}
+```
+
+
 
 ##### getSnapshotBeforeUpdate
 
