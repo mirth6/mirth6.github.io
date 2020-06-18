@@ -12,6 +12,10 @@ CNN: 입력층 -> 컨볼루션층 -> 완전 연결층 -> 출력층
 
 #### 컨볼루션층
 
+이미지의 각 픽셀을 그대로 feature로 사용하는 것은 좋지 않은 방법이라는 것을 언급했었다. 대신 각 이미지로부터 독특한 특성만을 뽑아내어 feature로 사용한다면 더 좋은 성능을 낼 수 있을 것이다. 이 과정을 feature extraction이라고 하고, 이미지에서 feature extractor로 동작하는 레이어가 바로 convolutional layer이다.
+
+Dense layer에서 각 입력 샘플을 1차원의 벡터 데이터로 보았다면, Convolutional layer는 입력 샘플을 3차원의 텐서(Tensor) 데이터로 인식한다. Convolutional layer는 입력 3차원 데이터를 적절히 변형해서 또다른 3차원 데이터를 출력한다.
+
 conv 
 
 - 컨볼루션 연산을 통해 입력데이터의 특징을 추출하여 특징맵 만듦
@@ -98,3 +102,4 @@ pooling
 ##### reference
 
 - https://youtu.be/WPdGrPxEwXc
+- [https://de-novo.org/2018/05/27/convnet-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/](https://de-novo.org/2018/05/27/convnet-이해하기/)

@@ -337,6 +337,50 @@ https://react-etc.vlpt.us/06.typescript-basic.html
 
 
 
+
+
+## Material-ui
+
+https://material-ui.com/
+
+
+
+- css
+
+```
+npm install @material-ui/styles
+```
+
+스타일 변경
+
+```react
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+const useStyles = makeStyles({
+  root: {
+      //css설정
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    border: 0,
+    borderRadius: 3,
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+  },
+});
+
+export default function Hook() {
+  const classes = useStyles();
+  return <Button className={classes.root}>Hook</Button>;
+}
+```
+
+
+
+
+
 ###### reference
 
 JSX 참고문서: [https://react-anyone.vlpt.us/03.html](https://www.youtube.com/redirect?q=https%3A%2F%2Freact-anyone.vlpt.us%2F03.html&redir_token=WqG839__z-nbEwPhayTWcTZqvBN8MTU5MDQ3MzMwNkAxNTkwMzg2OTA2&v=8RVoVvgaQdY&event=video_description) 

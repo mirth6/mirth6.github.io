@@ -112,7 +112,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles', #satic관련
     '앱이름 추가',
 ]
 
@@ -195,7 +195,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'), #root의 static 파일
+]
 ```
 
 - DEBUG
@@ -218,8 +220,8 @@ STATIC_URL = '/static/'
 from newApp.views import *
 
 urlpatterns = [
-    url('',home, name ='home'), #기본루트
-    url(r'^write/',write, name ='wirte'), #주소, 함수, 이름 
+    path('',home, name ='home'), #기본루트
+    path('write/',write, name ='wirte'), #주소, 함수, 이름 
     url(r'^list/',list, name ='list'),
     url(r'^view/(?P<num>[0-9]+)/$',view, name ='view'),
 ]
@@ -242,6 +244,19 @@ class Article(models.Model):
     cdate = models.DateTimeField(auto_now_add=True);
     
 ```
+
+- models.CharField: 글자수 제한이 있는 텍스트
+- models.TextField: 글자수 제한이 없는 텍스트
+- models.DateTimeField: 날짜, 시간
+- models.ForeignKey: 다른 모델과의 링크를 잡아줌(외래키)
+
+모델 추가후 
+
+```cmd
+python manage.py migrate 모델이_추가된_앱이름
+```
+
+
 
 ###### views.py
 
