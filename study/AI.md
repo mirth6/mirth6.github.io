@@ -61,3 +61,14 @@ https://www.anaconda.com/distribution/
 (AI)> conda install git matplotlib scikit-learn tqdm scipy numpy tensorflow-gpu==2.0.0
 ```
 
+
+
+------
+
+### 전처리
+
+##### 1 load image
+
+- 이미지 가져오기
+- 사이즈 맞춰주기
+- 
