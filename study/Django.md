@@ -332,4 +332,4 @@ def view(request, num='1'):
 
 
 
-[출처] [https://github.com/onecue/django_comm...](https://www.youtube.com/redirect?redir_token=K89w6PZPmd7tYAZdfWatlJiUQYR8MTU4NzQwMTkwMUAxNTg3MzE1NTAx&v=Fn2XMeRmwe4&q=https%3A%2F%2Fgithub.com%2Fonecue%2Fdjango_community&event=video_description)
+[출처] [https://github.com/onecue/django_comm...](https://www.youtube.com/redirect?redir_token=K89w6PZPmd7tYAZdfWatlJiUQYR8MTU4NzQwMTkwMUAxNTg3MzE1NTAx&v=Fn2XMeRmwe4&q=https%3A%2F%2Fgithub.com%2Fonecue%2Fdjango_community&event=video_description)]
