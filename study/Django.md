@@ -291,7 +291,7 @@ def view(request, num='1'):
 <body>
     <form>
         {{form.as_p}} //p태그로 폼 만듦
-        {%csrf_token%} //에러 안나게 하려면 이거 추가
+        //{% csrf_token %} //에러 안나게 하려면 이거 추가
         <button>
     </form>
 </body>
