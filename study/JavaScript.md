@@ -6,6 +6,110 @@
 
 ### 기초--------------------------------------------------------------------
 
+##### 변수
+
+```javascript
+var
+let
+const
+```
+
+##### 배열
+
+```javascript
+var arr = [10,20,30,40,50];
+var mixArr = [10, "string", variable];
+
+console.log(arr)				>> [10,20,30,40,50]
+console.log(arr[0])				>> 10
+```
+
+##### Object
+
+```javascript
+var person = {
+	name:{
+		firstname: '혜희',
+		lastname: '김',  
+	},
+	age:26,
+	married:false,
+    favorite: ["밥","잠",2],
+};
+
+console.log(person.age) >> 26
+
+document.write(person['name']);					>> [object Object]
+document.write(person['name']['firstname']);	>> 혜희
+document.write(person['age']);					>> 26
+```
+
+
+
+##### 연산
+
+```javascript
+var num = 100;
+var str = '100';
+        
+console.log(num+num);			>>200
+console.log(str+str);			>>100100
+console.log(num**num);			>>10000 (100^100)
+console.log(num == str);		>>true (타입 안봄)
+console.log(num === str);		>>false
+```
+
+##### if문
+
+```javascript
+if(false){
+	console.log('if');
+}else if(true){
+	console.log('else if');
+}else{
+	console.log('else');
+}
+
+>> else if
+```
+
+##### switch문
+
+```javascript
+var n = 2;
+switch(n){
+    case 1:
+        break;
+    case 2:
+        break;
+    default:
+        break;
+}
+```
+
+##### 반복문
+
+```javascript
+arr = [10,20,30,40,50];
+
+for(var i=0; i<arr.length; i++){
+    document.write(arr[i]);
+}
+    
+while (j<10){
+    document.write(j);
+    j++;
+}
+```
+
+##### 
+
+
+
+
+
+
+
 ##### 출력
 
 ```html
@@ -23,23 +127,6 @@
 
 *순차적으로 읽음 -> script를 body뒤에 두는게 좋아
 
-##### 연산
-
-```html
-<body>    
-    <script>
-		var num = 100;
-        var str = '100';
-        
-        document.write(num+num);		>>200
-        document.write(str+str);		>>100100
-        document.write(num**num);		>>10000 (100^100)
-        document.write(num == str);		>>true (타입 안봄)
-        document.write(num === str);	>>false
-	</script>
-</body>
-```
-
 ##### 함수
 
 ```html
@@ -47,10 +134,23 @@
 	function func(x,y){
         var z;
         z = x+y;
+        console.log(`${x} plus ${y} is ${z}`)
         return z
     }
-    documet.write( func(3,6) );
+    document.write( func(3,6) );
 </script>
+```
+
+##### DOM 함수
+
+```html
+<body>
+	<h1 id="title"> This is Title </h1>
+	<script>
+		const t = document.getElementById("title")
+        console.log(t)		>> 
+	</script>
+</body>
 ```
 
 ##### 내장함수
@@ -108,55 +208,10 @@
         age:26,
         married:false,
     };
+    person.age >> 26
 	document.write(person['name']);					>>[object Object]
     document.write(person['name']['firstname']);	>>혜희
     document.write(person['age']);					>>26
-</script>
-```
-
-##### if문
-
-```html
-<script>
-	if(false){
-        document.write('if');
-    }else if(true){
-        document.write('else if');
-    }else{
-        document.write('else');
-    }
-</script>
-```
-
-##### switch문
-
-```html
-<script>
-	var n = 2;
-    switch(n){
-        case 1:
-            break;
-        case 2:
-            break;
-        default:
-            break;
-    }
-</script>
-```
-
-##### 반복문
-
-```html
-<script>
-	arr = [10,20,30,40,50];
-    for(var i=0; i<arr.length; i++){
-        document.write(arr[i]);
-    }
-    
-    while (j<10){
-        document.write(j);
-        j++;
-    }
 </script>
 ```
 
