@@ -14,7 +14,7 @@ remote_theme             : "mmistakes/minimal-mistakes@4.19.3"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "헤히히히"
+title                    : "Site Title"
 title_separator          : "-"
 subtitle                 : "알파"# site tagline that appears below site title in masthead
 name                     : "Your Name"
