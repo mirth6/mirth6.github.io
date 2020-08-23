@@ -32,14 +32,14 @@
 
 인스턴스 옵션 : *data, template, el, methods, life cycle hook* 
 
+- template: 화면에 표시할 html, css등 마크업 요소를 정의하는 속성
 - el : 뷰 인스턴스가 그려질 지점 지정, 뷰로만든 화면이 그려지는 시작점
 - data:
 - methods: 화면 로직 제어와 관계된 메서드를 정의하는 속성. 이벤트, 화면 동작과 관련된 로직 추가
-- template: 화면에 표시할 html, css등 마크업 요소를 정의하는 속성
+- computed: data를 수정하지 않고 가공된 data를 활용하고 싶을때
+- watch: 특정 data가 수정되면 실행
 
 
-
-##### 인스턴스 라이프 사이클
 
 초기화 작업
 
@@ -60,13 +60,39 @@ new Vue({
 });
 ```
 
-라이프사이클: created, mounted, updated, destroyed
 
-|         |                                                              |
-| ------- | ------------------------------------------------------------ |
-| created | 뷰 인스턴스가 생성되자마자 실행할 로직을 정의할 수 있는 속성 |
-|         |                                                              |
-|         |                                                              |
+
+#### 라이프사이클
+
+![vue lifecycle](https://kr.vuejs.org/images/lifecycle.png)
+
+| 라이프사이클  | 설명                                                         |
+| ------------- | ------------------------------------------------------------ |
+| beforeCreated | Vue 인스턴스 생성후, data변화와 이벤트 감시에 대한 설정 전에 호출 |
+| created       | 뷰 인스턴스가 생성되자마자 실행할 로직을 정의할 수 있는 속성 |
+| beforeMount   | 마운트 될 대상(el, .$mount(대상))이 DOM에 마운트 되기 전 호출 |
+| mounted       | DOM에서 마운트 될 대상과 마운트 된 후 호출                   |
+| beforeUpdate  | data가 변경된 후 DOM이 다시 렌더링 되기 전 호출              |
+| updated       | data가 변경된 후 DOM이 다시 렌더링 되고 난 후 호출           |
+| beforeDestroy | Vue 인스턴스 제거 전 호출                                    |
+| destroyed     | Vue 인스턴스 제거 후 호출                                    |
+
+
+
+#### Vue Directives
+
+- v-접두사가 있는 특수 속성
+
+|         |      |      |
+| ------- | ---- | ---- |
+| v-text  |      |      |
+| v-html  |      |      |
+| v-bind  |      |      |
+| v-model |      |      |
+| v-show  |      |      |
+| v-if    |      |      |
+| v-for   |      |      |
+| v-on    |      |      |
 
 
 
@@ -216,7 +242,7 @@ new Vue({
 });
 ```
 
-##### 만약, `eventBus`의 콜백 함수 안에서 해당 컴포넌트의 메서드를 참고하려면 `vm` 사용
+만약, `eventBus`의 콜백 함수 안에서 해당 컴포넌트의 메서드를 참고하려면 `vm` 사용
 
 ```js
 new Vue({
@@ -237,7 +263,7 @@ new Vue({
 
 
 
-##### 동일한 상위 컴포넌트를 가진 하위 컴포넌트들 간의 통신은 아래와 같이 해야 한다.
+동일한 상위 컴포넌트를 가진 하위 컴포넌트들 간의 통신은 아래와 같이 해야 한다.
 
 - Child(하위) -> Parent(상위) -> Children(하위 2개)
 
